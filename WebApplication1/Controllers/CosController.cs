@@ -52,7 +52,7 @@ namespace WebApplication1.Controllers
             
                     dbCos.Entry(msg).State = System.Data.Entity.EntityState.Modified;
                     dbCos.SaveChanges();
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index ");
                 
         }
     }
