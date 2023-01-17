@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebApplication1.Models.StocModel>
+
+@{
+    ViewBag.Title = "Stoc Produse";
+}
+
+<h2>Stoc Produse</h2>
+
+<p>
+    @Html.ActionLink("Adauga un nou produs", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nume_Produs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Material_Produs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cantitate_Produs)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nume_Produs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Material_Produs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cantitate_Produs)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id_Produs }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id_Produs }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id_Produs }) |
+            @Html.ActionLink("Adauga la cosul de cumparaturi", "AdaugaLaCosulDeCumparaturi", new { id = item.Id_Produs })
+        </td>
+    </tr>
+}
+
+</table>
